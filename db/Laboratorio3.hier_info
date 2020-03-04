@@ -1,0 +1,21 @@
+|Esquema_FF
+Z <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+CLR => inst2.ACLR
+CLR => inst1.ACLR
+CLR => inst.ACLR
+CLK => inst2.CLK
+CLK => inst1.CLK
+CLK => inst.CLK
+W => inst13.IN0
+W => inst17.IN1
+W => inst9.IN0
+W => inst4.IN0
+W => inst16.IN1
+X => inst14.IN0
+X => inst17.IN0
+X => inst20.IN0
+X => inst7.IN0
+X => inst5.IN0
+X => inst15.IN0
+
+
