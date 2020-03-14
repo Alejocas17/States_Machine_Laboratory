@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Laboratorio3
-Wed Mar 04 12:12:44 2020
+Sat Mar 14 17:12:02 2020
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -13,9 +13,10 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  8. State Machine - |bloque_fsm_2|fsm_2:inst|fstate
+  9. General Register Statistics
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -41,15 +42,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 04 12:12:44 2020      ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 14 17:12:02 2020      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; Laboratorio3                               ;
-; Top-level Entity Name              ; Esquema_FF                                 ;
+; Top-level Entity Name              ; bloque_fsm_2                               ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 7                                          ;
-;     Total combinational functions  ; 7                                          ;
-;     Dedicated logic registers      ; 3                                          ;
-; Total registers                    ; 3                                          ;
+; Total logic elements               ; 15                                         ;
+;     Total combinational functions  ; 15                                         ;
+;     Dedicated logic registers      ; 11                                         ;
+; Total registers                    ; 11                                         ;
 ; Total pins                         ; 5                                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -64,7 +65,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE22F17C6       ;                    ;
-; Top-level entity name                                                      ; Esquema_FF         ; Laboratorio3       ;
+; Top-level entity name                                                      ; bloque_fsm_2       ; Laboratorio3       ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -156,53 +157,75 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                             ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                   ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------+---------+
-; Esquema_FF.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/alejo/Desktop/Universidad Del Valle/Sexto Semestre/LabDigitalesII/LAB3/Esquema_FF.bdf ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                    ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                          ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; bloque_fsm_2.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/Users/alejo/Desktop/Universidad Del Valle/Sexto Semestre/LabDigitalesII/States_Machine_Laboratory/bloque_fsm_2.bdf ;         ;
+; fsm_2.vhd                        ; yes             ; User VHDL File                     ; C:/Users/alejo/Desktop/Universidad Del Valle/Sexto Semestre/LabDigitalesII/States_Machine_Laboratory/fsm_2.vhd        ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 7     ;
-;                                             ;       ;
-; Total combinational functions               ; 7     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 3     ;
-;     -- 3 input functions                    ; 2     ;
-;     -- <=2 input functions                  ; 2     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 7     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 3     ;
-;     -- Dedicated logic registers            ; 3     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 5     ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; inst  ;
-; Maximum fan-out                             ; 5     ;
-; Total fan-out                               ; 37    ;
-; Average fan-out                             ; 1.85  ;
-+---------------------------------------------+-------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 15         ;
+;                                             ;            ;
+; Total combinational functions               ; 15         ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 4          ;
+;     -- 3 input functions                    ; 8          ;
+;     -- <=2 input functions                  ; 3          ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 15         ;
+;     -- arithmetic mode                      ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 11         ;
+;     -- Dedicated logic registers            ; 11         ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 5          ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+; Maximum fan-out node                        ; rst1~input ;
+; Maximum fan-out                             ; 12         ;
+; Total fan-out                               ; 74         ;
+; Average fan-out                             ; 2.06       ;
++---------------------------------------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |Esquema_FF                ; 7 (7)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |Esquema_FF         ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+; |bloque_fsm_2              ; 15 (0)            ; 11 (0)       ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |bloque_fsm_2            ;              ;
+;    |fsm_2:inst|            ; 15 (15)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bloque_fsm_2|fsm_2:inst ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bloque_fsm_2|fsm_2:inst|fstate                                                                                                                                                  ;
++----------------+----------------+----------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
+; Name           ; fstate.state11 ; fstate.state10 ; fstate.state9 ; fstate.state8 ; fstate.state7 ; fstate.state6 ; fstate.state5 ; fstate.state4 ; fstate.state3 ; fstate.state2 ; fstate.state1 ;
++----------------+----------------+----------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
+; fstate.state1  ; 0              ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ;
+; fstate.state2  ; 0              ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 1             ;
+; fstate.state3  ; 0              ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 1             ;
+; fstate.state4  ; 0              ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 1             ;
+; fstate.state5  ; 0              ; 0              ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 1             ;
+; fstate.state6  ; 0              ; 0              ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 1             ;
+; fstate.state7  ; 0              ; 0              ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ;
+; fstate.state8  ; 0              ; 0              ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ;
+; fstate.state9  ; 0              ; 0              ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ;
+; fstate.state10 ; 0              ; 1              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ;
+; fstate.state11 ; 1              ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ;
++----------------+----------------+----------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
 
 
 +------------------------------------------------------+
@@ -210,10 +233,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3     ;
+; Total registers                              ; 11    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -225,7 +248,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -235,23 +258,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Mar 04 12:12:40 2020
+    Info: Processing started: Sat Mar 14 17:12:01 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Laboratorio3 -c Laboratorio3
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file esquema_ff.bdf
     Info (12023): Found entity 1: Esquema_FF
-Info (12127): Elaborating entity "Esquema_FF" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file laboratorio3_2.vhd
+    Info (12022): Found design unit 1: Laboratorio3_2-BEHAVIOR
+    Info (12023): Found entity 1: Laboratorio3_2
+Info (12021): Found 1 design units, including 1 entities, in source file bloque_fsm.bdf
+    Info (12023): Found entity 1: bloque_fsm
+Info (12021): Found 1 design units, including 1 entities, in source file bloque_fsm_2.bdf
+    Info (12023): Found entity 1: bloque_fsm_2
+Info (12021): Found 2 design units, including 1 entities, in source file fsm_2.vhd
+    Info (12022): Found design unit 1: fsm_2-BEHAVIOR
+    Info (12023): Found entity 1: fsm_2
+Info (12127): Elaborating entity "bloque_fsm_2" for the top level hierarchy
+Info (12128): Elaborating entity "fsm_2" for hierarchy "fsm_2:inst"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 7 logic cells
+Info (21057): Implemented 21 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 16 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4590 megabytes
-    Info: Processing ended: Wed Mar 04 12:12:44 2020
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 4636 megabytes
+    Info: Processing ended: Sat Mar 14 17:12:02 2020
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

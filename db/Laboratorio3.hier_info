@@ -1,21 +1,40 @@
-|Esquema_FF
-Z <= inst10.DB_MAX_OUTPUT_PORT_TYPE
-CLR => inst2.ACLR
-CLR => inst1.ACLR
-CLR => inst.ACLR
-CLK => inst2.CLK
-CLK => inst1.CLK
-CLK => inst.CLK
-W => inst13.IN0
-W => inst17.IN1
-W => inst9.IN0
-W => inst4.IN0
-W => inst16.IN1
-X => inst14.IN0
-X => inst17.IN0
-X => inst20.IN0
-X => inst7.IN0
-X => inst5.IN0
-X => inst15.IN0
+|bloque_fsm_2
+z0 <= fsm_2:inst.z0
+rst1 => fsm_2:inst.reset
+clk1 => fsm_2:inst.clock
+x => fsm_2:inst.x
+z1 <= fsm_2:inst.z1
+
+
+|bloque_fsm_2|fsm_2:inst
+reset => reg_fstate.state2.OUTPUTSELECT
+reset => reg_fstate.state3.OUTPUTSELECT
+reset => reg_fstate.state4.OUTPUTSELECT
+reset => reg_fstate.state5.OUTPUTSELECT
+reset => reg_fstate.state6.OUTPUTSELECT
+reset => reg_fstate.state7.OUTPUTSELECT
+reset => reg_fstate.state8.OUTPUTSELECT
+reset => reg_fstate.state9.OUTPUTSELECT
+reset => reg_fstate.state10.OUTPUTSELECT
+reset => reg_fstate.state11.OUTPUTSELECT
+reset => z0.OUTPUTSELECT
+reset => z1.OUTPUTSELECT
+reset => fstate.state1.DATAIN
+clock => fstate~1.DATAIN
+x => Selector1.IN1
+x => Selector2.IN1
+x => Selector4.IN1
+x => reg_fstate.DATAB
+x => Selector6.IN1
+x => Selector8.IN2
+x => Selector10.IN1
+x => Selector9.IN1
+x => Selector9.IN2
+x => Selector0.IN1
+x => Selector5.IN1
+x => Selector7.IN0
+x => Selector3.IN0
+z0 <= z0.DB_MAX_OUTPUT_PORT_TYPE
+z1 <= z1.DB_MAX_OUTPUT_PORT_TYPE
 
 

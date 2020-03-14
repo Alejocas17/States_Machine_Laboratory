@@ -18,13 +18,14 @@
 #
 # Quartus II 64-Bit
 # Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-# Date created = 12:40:42  March 04, 2020
+# Date created = 17:05:31  March 14, 2020
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "13.0"
-DATE = "12:40:42  March 04, 2020"
+DATE = "17:05:31  March 14, 2020"
 
 # Revisions
 
 PROJECT_REVISION = "Laboratorio3"
+PROJECT_REVISION = "Laboratorio3_qsim"
